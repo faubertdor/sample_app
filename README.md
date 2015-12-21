@@ -1,7 +1,7 @@
 == README
 
 This is the complete app from Michael Hartl Ruby on Rails Tutorial.
-https://sample-app-mhartl.herokuapp.com/
+https://sample-app-jdorancy.herokuapp.com/
 
 * Ruby version
     ruby 2.1.2p95
