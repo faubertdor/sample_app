@@ -57,5 +57,7 @@ group :production do
   gem 'pg'
   # Modules for Heroku
   gem 'rails_12factor'
+  # Production web server Puma for Heroku
+  gem 'puma'
 end
 
