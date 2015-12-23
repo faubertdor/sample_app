@@ -21,8 +21,6 @@ module SessionsHelper
       if (user && user.authenticated?(cookies[:remember_token]))
         log_in(user)
         @current_user = user
-      else
-        return nil
       end
     end
   end
