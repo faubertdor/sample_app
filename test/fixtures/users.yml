@@ -8,5 +8,11 @@ jean:
   name: Jean F. Dorancy
   email: user@example.com
   password_digest: <%= User.digest('foobar') %>
-  
-  
+  admin: true
+
+<% 80.times do |n| %>
+user_<%= n %>:
+  name:            <%= "User #{ n }" %>
+  email:           <%= "user-#{ n }@example.com" %>
+  password_digest: <%= User.digest('foobar') %>
+<% end %>

@@ -123,6 +123,21 @@ aside {
     margin-top: 15px;
 }
 
+/* users index */
+
+.users {
+    list-style: none;
+    margin: 0;
+    li {
+        overflow: auto;
+        padding: 10px 0;
+        border-bottom: 1px solid $light-gray;
+        .user_name {
+            padding-left: 55px;
+        }
+    }
+}
+
 /* forms */
 
 .checkbox {
