@@ -31,7 +31,10 @@ gem 'faker', '~> 1.4.2'
 gem 'will_paginate',           '~> 3.0.7'
 # Pagination style with bootstrap
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-
+# Image upload related gem
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 3.8.0'
+gem 'fog',         '1.36.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
