@@ -20,7 +20,14 @@ tamara:
   password_digest: <%= User.digest('foobar') %>
   activated: true
   activated_at: <%= Time.zone.now %>
-
+  
+marie:
+  name: Marie Rose
+  email: marie@example.com
+  password_digest: <%= User.digest('foobar') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  
 <% 80.times do |n| %>
 user_<%= n %>:
   name:            <%= "User #{ n }" %>

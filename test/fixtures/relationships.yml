@@ -1,0 +1,15 @@
+one:
+  follower: jean
+  followed: tamara
+
+two:
+  follower: jean
+  followed: michael
+
+three:
+  follower: tamara
+  followed: jean
+
+four:
+  follower: marie
+  followed: jean

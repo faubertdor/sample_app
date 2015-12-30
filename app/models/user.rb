@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: "follower_id",
+                                  dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship",
+                                   foreign_key: "followed_id",
+                                   dependent:   :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships #, source: :follower
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -75,6 +83,21 @@ class User < ActiveRecord::Base
   # Define Proto-feed method
   def feed
     Micropost.where("user_id = ?", id)
+  end
+  
+  # Follow a user
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+  
+  # Unfollow a user
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+  
+  # True if the other_user is following user
+  def following?(other_user)
+    following.include?(other_user)
   end
   
   # Methods used inside the class only  
