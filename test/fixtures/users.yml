@@ -15,10 +15,9 @@ jean:
   activated_at: <%= Time.zone.now %>
   
 tamara:
-  name: Jean F. Dorancy
+  name: Tamara Dorancy Jean
   email: tamara@example.com
   password_digest: <%= User.digest('foobar') %>
-  admin: false
   activated: true
   activated_at: <%= Time.zone.now %>
 
