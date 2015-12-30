@@ -8,4 +8,5 @@ if Rails.env.production?
     }
     config.fog_directory     =  ENV['S3_BUCKET']
   end
+  Fog::Storage::AWS::DEFAULT_REGION = 'us-west-2'
 end
