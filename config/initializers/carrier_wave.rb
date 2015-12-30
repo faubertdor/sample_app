@@ -4,9 +4,11 @@ if Rails.env.production?
       # Configuration for Amazon S3
       :provider              => 'AWS',
       :aws_access_key_id     => ENV['S3_ACCESS_KEY'],
-      :aws_secret_access_key => ENV['S3_SECRET_KEY']
+      :aws_secret_access_key => ENV['S3_SECRET_KEY'],
+      :region                => 'us-west-2'
     }
     config.fog_directory     =  ENV['S3_BUCKET']
+    config.fog_public     = false                                   # optional, defaults to true
+    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
   end
-  Fog::Storage::AWS::DEFAULT_REGION = 'us-west-2'
 end
